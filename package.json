@@ -1,0 +1,35 @@
+{
+  "name": "lrm-straightline",
+  "version": "0.1.0",
+  "description": "Straight lines routing for Leaflet Routing Machine",
+  "main": "dist/lrm-straightline.min.js",
+  "scripts": {
+    "_browserify": "browserify -t browserify-shim src/L.Routing.StraightLine.js -o dist/lrm-straightline.js",
+    "_uglify": "uglifyjs dist/lrm-straightline.js -o dist/lrm-straightline.min.js",
+    "bundle": "npm run _browserify && npm run _uglify",
+    "jshint": "jshint src/L.Routing.StraightLine.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "leaflet",
+    "routing"
+  ],
+  "author": "Thomas Muguet <hi@tmuguet.me>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tmuguet/lrm-straightline.git"
+  },
+  "homepage": "https://github.com/tmuguet/lrm-straightline",
+  "bugs": "https://github.com/tmuguet/lrm-straightline/issues",
+  "dependencies": {},
+  "browserify-shim": {
+    "leaflet": "global:L"
+  },
+  "devDependencies": {
+    "browserify": "^16.2.3",
+    "browserify-shim": "^3.8.14",
+    "jshint": "^2.9.6",
+    "uglify-js": "^3.4.9"
+  }
+}
