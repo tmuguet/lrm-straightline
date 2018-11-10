@@ -22,7 +22,7 @@
   }
 
   // from https://gis.stackexchange.com/questions/157693/getting-all-vertex-lat-long-coordinates-every-1-meter-between-two-known-points
-  var getDestinationAlong = function(from, azimuth, distance) {
+  function getDestinationAlong(from, azimuth, distance) {
     var R = 6378137; // Radius of the Earth in m
     var brng = Math.radians(azimuth); // Bearing is degrees converted to radians.
     var lat1 = Math.radians(from.lat); //Current dd lat point converted to radians
@@ -42,9 +42,9 @@
     lat2 = Math.degrees(lat2);
     lon2 = Math.degrees(lon2);
     return L.latLng(lat2, lon2);
-  };
+  }
 
-  var bearingTo = function(start, end) {
+  function bearingTo(start, end) {
     var startLat = Math.radians(start.lat);
     var startLong = Math.radians(start.lng);
     var endLat = Math.radians(end.lat);
@@ -63,7 +63,7 @@
     }
 
     return (Math.degrees(Math.atan2(dLong, dPhi)) + 360.0) % 360.0;
-  };
+  }
 
   L.Routing.StraightLine = L.Evented.extend({
     options: {
@@ -88,7 +88,7 @@
     },
 
     route: function(waypoints, callback, context, options) {
-      // Merge the options so we get options defined at L.Routing.GeoPortail creation
+      // Merge the options so we get options defined at L.Routing.StraightLine creation
       var _options = this.options;
       for (var attrname in options) {
         _options[attrname] = options[attrname];
