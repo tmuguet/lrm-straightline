@@ -4,10 +4,12 @@
   "description": "Straight lines routing for Leaflet Routing Machine",
   "main": "dist/lrm-straightline.min.js",
   "scripts": {
-    "_browserify": "browserify -t browserify-shim src/L.Routing.StraightLine.js -o dist/lrm-straightline.js",
+    "_browserify": "browserify -t [ babelify --presets [ @babel/preset-env ] ] -t browserify-shim -p browserify-derequire src/L.Routing.StraightLine.js -o dist/lrm-straightline.js",
     "_uglify": "uglifyjs dist/lrm-straightline.js -o dist/lrm-straightline.min.js",
     "bundle": "npm run _browserify && npm run _uglify",
-    "jshint": "jshint src/L.Routing.StraightLine.js",
+    "eslint": "eslint src/*.js",
+    "validate": "npm run bundle && npm run eslint",
+    "version": "npm run validate",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -27,10 +29,16 @@
     "leaflet": "global:L"
   },
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "babelify": "^10.0.0",
     "browserify": "^16.2.3",
+    "browserify-derequire": "^1.0.0",
     "browserify-shim": "^3.8.14",
-    "jshint": "^2.9.6",
-    "leaflet": "^1.3.4",
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "leaflet": "^1.4.0",
     "leaflet-routing-machine": "^3.2.12",
     "uglify-js": "^3.4.9"
   }
