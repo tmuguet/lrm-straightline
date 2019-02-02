@@ -3,7 +3,7 @@
   "rules": {
     "no-underscore-dangle": "off",
     "no-param-reassign": ["error", { "props": false }],
-    "max-len": ["error", { "code": 120 }],
+    "max-len": ["error", { "code": 120, "ignoreUrls": true }],
     "import/no-unresolved": "off",
     "import/no-extraneous-dependencies": "off"
   }
