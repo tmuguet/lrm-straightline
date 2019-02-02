@@ -1,6 +1,6 @@
 {
   "name": "lrm-straightline",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Straight lines routing for Leaflet Routing Machine",
   "main": "dist/lrm-straightline.min.js",
   "types": "src/index.d.ts",
