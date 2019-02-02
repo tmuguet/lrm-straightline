@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Straight lines routing for Leaflet Routing Machine",
   "main": "dist/lrm-straightline.min.js",
+  "types": "src/index.d.ts",
   "scripts": {
     "_browserify": "browserify -t [ babelify --presets [ @babel/preset-env ] ] -t browserify-shim -p browserify-derequire src/L.Routing.StraightLine.js -o dist/lrm-straightline.js",
     "_uglify": "uglifyjs dist/lrm-straightline.js -o dist/lrm-straightline.min.js",
